@@ -1,27 +1,65 @@
 \documentclass{book}
+
+\usepackage[margin=1.3in]{geometry}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{epigraph}
+\usepackage{titlesec}
+\usepackage{color}
+\usepackage[toc,page]{appendix}
+\usepackage{amsthm}
+\usepackage{cleveref}
 
-\newcommand{\NN}{\mathbb{N}}
-\newcommand{\QQ}{\mathbb{Q}}
-\newcommand{\ZZ}{\mathbb{Z}}
+\renewcommand\qedsymbol{$\blacksquare$}
+\definecolor{defgreen}{RGB}{95,174,87}
+\definecolor{egblue}{RGB}{35, 104, 99}
+\definecolor{thred}{RGB}{167, 56, 62}
+
 \newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\CC}{\mathbb{C}}
 
-\author{Steven Rosendahl}
-\title{Mathematical History}
+\DeclareRobustCommand\iff{\Leftrightarrow}
+
+\newcommand{\deft}[1]{\color{defgreen} \textbf{#1}}
+\newcommand{\egft}[1]{\color{egblue} \textbf{#1}}
+\newcommand{\thmft}[1]{\color{thred} \textbf{#1}}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem*{utheorem}{Theorem}
+\newtheorem*{udefinition}{Definition}
+
+\newtheoremstyle{defBG}{0.5cm}{0.5cm}{}{0.5cm}{\color{defgreen}}{.}{ }{}
+\theoremstyle{defBG}
+\newtheorem{definition}{Definition}[section]
+
+\newtheoremstyle{egBG}{0.5cm}{0.5cm}{}{0.5cm}{\color{egblue}}{.}{ }{}
+\theoremstyle{egBG}
+\newtheorem{example}{Example}[section]
+
+\newtheoremstyle{named}{}{}{\itshape}{}{\bfseries}{.}{.5em}{\color{thred} \thmnote{#3}}
+\theoremstyle{named}
+\newtheorem{namedtheorem}{Theorem}
+
+\title{Undergraduate Mathematics}
 \date{}
+\author{Steven Rosendahl}
 
 \begin{document}
-    \maketitle
+\maketitle
 
-    \include{./chaps/forward}
-    \include{./chaps/ch_00}
+\tableofcontents{}
 
-    \part{Numbers}
-        \include{./chaps/ch_01}
-        \include{./chaps/ch_02}
-        \include{./chaps/ch_03}
+\part{Algebra}
 
-    \part{Geometry}
-        \include{./chaps/ch_04}
+\include{./chaps/sets}
+
+\part{Calculus}
+
+\begin{appendices}
+	\include{defs}
+	\include{thms}
+\end{appendices}
 \end{document}
