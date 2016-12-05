@@ -1,0 +1,45 @@
+\chapter{Groups}
+
+This chapter focuses on three very important structures known as groups, rings, and fields. We will look at groups in great detail; an in depth study of rings and fields are slightly beyond the scope of this book. These three structures unite many of the ideas in Number Theory, Analysis, Differential Equations, and many more fields of study in mathematics.
+
+\subsection{Introduction}
+Our study of algebraic structures begin with the idea of a group. As it turns out, we have actually seen examples of groups without even knowing it: $\ZZ$, $\RR$, $\CC$, and $\ZZ_{p}$ are just a few groups. The set alone is not enough to be a group even though it is standard to write is as such. We need a set and a \textit{binary operator} in order to have a group.
+\begin{definition}{\deft{Binary Operation}}
+	Let $S$ be a set. A binary operation on $S$ is a mapping
+	\[*:S\times S \to S.\]
+	It is a means of associating a unique third object to each pair of objects in $S$.
+\end{definition}
+We have also seen various binary operations such as addition and multiplication. Note that the definition of binary operation implies that the operation is closed; that is, the elements must land back in $S$ after applying the operation. Hence, operations like subtraction are not always binary operations.
+\begin{example}{\egft{Show that subtraction is a binary operation on $\ZZ$, but not on $\NN$}}
+    To see this, let $a,b\in\ZZ$. It is clear that $a-b\in\ZZ\ \forall a,b\in\ZZ$. However, take $a,b\in\NN\suchthat\ a<b$. Then $a-b<0\implies a-b\notin \NN$.
+\end{example}
+There are other binary operations that are less common, such as $a*b=\max{(a,b)}$ on $\RR$, or $f\circ g$ where $f$ and $g$ are functions. We want to keep these operations in mind, as they will play an important role in later sections. With the knowledge of binary operations, we can now formally define a group.
+
+\begin{definition}{\deft{Group}}
+	Let $G$ be a set and $*$ be a binary operator. Then the pair $(G,*)$ is a group provided that
+	\begin{enumerate}
+		\item $*$ is associative; that is $(a*b)*c=a*(b*c)$.
+		\item There is an identity element $e\in G$; that is $a*e=e*a=a \forall a\in G$.
+		\item Every element in $G$ has an inverse; that is $a\in G\implies a^{-1}\in G \suchthat a*a^{-1}=a^{-1}*a=e\ \forall a\in G$.
+	\end{enumerate}
+\end{definition}
+When we want to prove something is a group, we must prove all three axioms listed in the definition. Often associativity is the most difficult; as such, it is often helpful to try and prove identity and inverses first.
+\begin{example}{\egft{Let $X$ be a set, and let $\mathcal{P}(X)$ be the power set of $X$. Show $(\mathcal{P}(X),\Delta)$ is a group.}}
+    Recall that $\Delta$ is the symmetric difference operator, defined as $A\Delta B= A\cup B\setminus A\cap B$. We won't do the associativity here (see problem \ref{prob:sym_dif_ass}), but it turns out that it is. To show the identity, we need a set $E\subset X \suchthat A\Delta E=A\ \forall A\in\mathcal{P}(X)$. It turns out that the emptyset does the job:
+    \begin{align*}
+        A\Delta \emptyset &= A\cup\emptyset \setminus A\cap\emptyset\\
+        &= A \setminus \emptyset\\
+        &= A.
+    \end{align*}
+    For inverses, we need $A'\suchthat A'\Delta A=\emptyset\ \forall A\in\mathcal{P}(X)$. The answer here is $A'=A$.
+    \begin{align*}
+        A \Delta A &= A \cup A \setminus A\cap A\\
+        &= A \setminus A\\
+        &= \emptyset.
+    \end{align*}
+\end{example}
+
+\subsection*{Problems}
+\begin{enumerate}
+    \item Show the symmetric difference operator $\Delta$ is associative.\label{prob:sym_dif_ass}
+\end{enumerate}

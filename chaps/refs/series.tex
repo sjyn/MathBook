@@ -1,0 +1,116 @@
+\chapter{Tests for Convergence}
+This appendix outlines the basic tests for convergence we can use in $\RR$. For an in depth look, refer to the appropriate chapter concerning the analysis of the set you want.
+
+\section{Series in $\RR$}
+
+\subsection*{Geometric Series}
+\[
+	\text{Given }\sum_{n=1}^{\infty}ar^{n-1}\text{ then }
+	\begin{cases}
+		|r| < 1 \implies \text{ convergence to } \frac{a}{1-r} \\
+		|r| \geq 1 \implies \text{ divergence}
+	\end{cases}
+\]
+
+\subsection*{P-Series}
+\[
+	\text{Given }\sum_{n=1}^{\infty}\frac{1}{n^{p}}\text{ then }
+    \begin{cases}
+        p > 1 \implies \text{ the series converges}\\
+        p \leq 1 \implies \text{ the series diverges}
+    \end{cases}
+\]
+
+\subsection*{Telescoping Series}
+\begin{gather*}
+    \text{Given }\sum_{n=1}^{\infty}\left(\frac{1}{n}-\frac{1}{n+1}\right)\text{ then}\\
+    \lim_{n\to\infty}\left(\frac{1}{n}-\frac{1}{n+1}\right)=L <\infty\implies\text{ convergence at } L
+\end{gather*}
+
+\subsection*{Divergence Test}
+\begin{gather*}
+    \text{Given } \sum_{n=1}^{\infty}a_{n}\text{ then}\\
+    \lim_{n\to\infty}a_{n}\neq0\implies\text{ divergence}
+\end{gather*}
+
+\subsection*{Integral Test}
+\[
+\text{Given }\sum_{n=1}^{\infty}a_{n},
+\]
+Let $f(n)=a_{n}$. If $f(n)$ is \textbf{Continuous}, \textbf{Positive}, and \textbf{Decreasing}, then
+\[
+\sum_{n=1}^{\infty}a_{n} \text{ converges } \iff \int_{0}^{\infty}f(n)\text{dn}\text{ exists.}
+\]
+
+\subsection*{Comparison Test}
+\[
+    \text{Given }\sum_{n=1}^{\infty}a_{n},
+\]
+choose $b_{n}$ such that
+\[
+    \sum_{n=1}^{\infty}a_{n}\text{ is similar to }\sum_{n=1}^{\infty}b_{n}.
+\]
+Then
+\begin{gather*}
+    \sum_{n=1}^{\infty}b_{n} \text{ converges and } a_{n} < b_{n}\ \forall n\in\NN\implies a_{n}\text{ converges}\\
+    \sum_{n=1}^{\infty}b_{n} \text{ diverges and } a_{n} > b_{n}\ \forall n\in\NN\implies a_{n}\text{ diverges}\\
+\end{gather*}
+
+\subsection*{Limit Comparison Test}
+\[
+\text{Given }\sum_{n=1}^{\infty}a_{n},
+\]
+choose $b_{n}$ such that
+\[
+    \sum_{n=1}^{\infty}a_{n}\text{ is similar to }\sum_{n=1}^{\infty}b_{n},
+\]
+and consider
+\[
+    \lim_{n\to\infty}\frac{a_{n}}{b_{n}} = L.
+\]
+Then
+\begin{gather*}
+    L \geq 0 \text{ and } \sum_{n=1}^{\infty}b_{n}\text{ converges }\implies\sum_{n=1}^{\infty}a_{n}\text{ converges}.\\
+    L > 0\text{ and }\sum_{n=1}^{\infty}b_{n}\text{ diverges }\implies\sum_{n=1}^{\infty}a_{n}\text{ diverges}.\\
+    L\to\infty\text{ and }\sum_{n=1}^{\infty}b_{n}\text{ diverges }\implies\sum_{n=1}^{\infty}a_{n}\text{ diverges}.
+\end{gather*}
+
+\subsection*{Ratio Test}
+\[
+\text{Given }\sum_{n=1}^{\infty}a_{n},
+\]
+consider
+\[
+\lim_{n\to\infty}\frac{a_{n+1}}{a_{n}}=L.
+\]
+Then
+\begin{gather*}
+    L < 1 \implies a_{n}\text{ converges}.\\
+    L > 1 \implies a_{n}\text{ diverges}.
+\end{gather*}
+
+\subsection*{Root Test}
+\[
+\text{Given }\sum_{n=1}^{\infty}a_{n},
+\]
+consider
+\[
+\lim_{n\to\infty}\sqrt[n]{a_{n}}=L.
+\]
+\begin{gather*}
+    L < 1 \implies a_{n}\text{ converges}.\\
+    L > 1 \implies a_{n}\text{ diverges}.
+\end{gather*}
+
+\subsection*{Alternating Series Test}
+\[
+\text{Given }\sum_{n=1}^{\infty}(-1)^{n-1}a_{n},
+\]
+then
+\[
+|a_{n+1}|\leq|a_{n}| \text{ and } \lim_{n\to\infty}|a_{n}|=0 \implies a_{n}\text{ converges.}
+\]
+
+\section{Series in $\CC$}
+
+\section{Power Series in $\QQ_{p}$}

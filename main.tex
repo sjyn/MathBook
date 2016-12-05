@@ -19,8 +19,11 @@
 \newcommand{\ZZ}{\mathbb{Z}}
 \newcommand{\QQ}{\mathbb{Q}}
 \newcommand{\CC}{\mathbb{C}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\suchthat}{\text{ s.t. }}
 
 \DeclareRobustCommand\iff{\Leftrightarrow}
+\DeclareRobustCommand\implies{\Rightarrow}
 
 \newcommand{\deft}[1]{\color{defgreen} \textbf{#1}}
 \newcommand{\egft}[1]{\color{egblue} \textbf{#1}}
@@ -54,12 +57,26 @@
 
 \part{Algebra}
 
-\include{./chaps/sets}
+\input{./chaps/sets_logic/sets}
+\input{./chaps/num_theory/nt}
+\input{./chaps/g_r_f/groups}
+\input{./chaps/g_r_f/rings_fields}
 
 \part{Calculus}
+\input{./chaps/calc/real_an}
+\input{./chaps/calc/multivar}
+\input{./chaps/calc/cmp_an}
+\input{./chaps/calc/ode}
+\input{./chaps/calc/pde}
 
-\begin{appendices}
-	\include{defs}
-	\include{thms}
-\end{appendices}
+\part{Statistics and Probability}
+\input{./chaps/snp/prob}
+\input{./chaps/snp/graph}
+\input{./chaps/snp/stats}
+
+\part{Case Studies}
+\input{./chaps/cases/linear_algebra}
+\input{./chaps/cases/p_adics}
+
+\input{./chaps/refs/appendix}
 \end{document}

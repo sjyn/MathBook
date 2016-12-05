@@ -1,8 +1,9 @@
-\chapter{Proofs and Set Theory}
-
 \section{Logic}
 
 We will begin by introducing the ideas of sets and proof simultaneously. Logic is the fundamental basis of all of mathematics; sets are the building blocks of all the structures that we know and love. There are various ways to prove the assertions in mathematics, but we will start by laying out basic logic rules and definitions. Much of the content of this section is a simplification of the actual logic we will use when proving important mathematical results; in other words, we won't see many truth tables in other chapters and sections. Nonetheless, the topics are fundamental and help us to put the rest of the content of this book into perspective. We will begin with a few definitions. This section will be a little heavy on the definitions as well as notation, but then again, all of mathematics is.
+
+\subsection{Logical Rules}
+Let's start off with the fundamental definition of this section.
 
 \begin{definition}{\deft{Statement}}
 	A statement is an assertion that is either true or false.
@@ -14,7 +15,7 @@ This may seem like a useless definition, but it actually points out a key fact t
 	The truth value of a statement is either true or false.
 \end{definition}
 
-Again, this definition is probably intuitive, but ultimately necessary. We typically name a statement $P$. With this in mind, we can begin to look at discrete logical statements.
+Again, this definition is probably intuitive, but ultimately necessary. We typically name a statement $P$. With this in mind, we can begin to look at discrete logical statements. The general idea here is to take two logical statements, typically called $P$ and $Q$, and perform some sort of operation on them. We can think of it like performing operations on numbers; the only difference here is that we have two options, True ($T$) or False ($F$), as opposed to, say, some real number. The following are the four most common operations in the world of logic.
 
 \begin{definition}{\deft{Negation}}
 	The negation of a statement $P$, denoted $\neg P$, is the statement that has the opposite truth value of $P$.
@@ -26,14 +27,14 @@ Again, this definition is probably intuitive, but ultimately necessary. We typic
 	Let $P$ and $Q$ be statements. The disjunction of statements $P$ and $Q$ is the truth value of either $P$ or $Q$, or $P$ and $Q$, denoted $P \lor Q$.
 \end{definition}
 \begin{definition}{\deft{Implication}}
-	Let $P$ and $Q$ be statements. The implication of statements $P$ and $Q$ is the truth value of $P$ implying $Q$, denoted $P\to Q$.
+	Let $P$ and $Q$ be statements. The implication of statements $P$ and $Q$ is the truth value of $P$ implying $Q$, denoted $P\implies Q$.
 \end{definition}
 
 These definitions are rather vague; the main purpose of pointing them out is to allow us to become familiar with the notation. Of more importance is the truth table created by the statements. A truth table is a handy way to determine the truth value of the four definitions given the truth values of $P$ and $Q$. The following is a truth table for the negation, conjunction, disjunction and implication of statements $P$ and $Q$. We will follow the convention set by most other mathematics textbooks: $T$ means \textit{true} and $F$ means \textit{false}.
 
 \begin{center}
 	\begin{tabular}{c | c | c | c | c | c | c}
-		$P$ & $Q$ & $\neg P$ & $\neg Q$ & $P \land Q$ & $P \lor Q$ & $P \to Q$ \\
+		$P$ & $Q$ & $\neg P$ & $\neg Q$ & $P \land Q$ & $P \lor Q$ & $P \implies Q$ \\
 		\hline
 		$T$ & $T$ & $F$      & $F$      & $T$         & $T$        & $T$       \\
 		$T$ & $F$ & $F$      & $T$      & $F$         & $T$        & $F$       \\
@@ -42,7 +43,32 @@ These definitions are rather vague; the main purpose of pointing them out is to 
 	\end{tabular}
 \end{center}
 
-The truth table above is very useful and probably worth memorizing. The only caveat is the implication. The truth values for $P\to Q$ makes sense, however; if we assert that something is true, it cannot make sense to say that whatever follows is false. In other words statements like \textit{If Alicia is mortal, then she is a dog} do not make sense logically.
+The truth table above is very useful and probably worth memorizing. The only caveat is the implication. The truth values for $P\implies Q$ makes sense, however; if we assert that something is true, it cannot make sense to say that whatever follows is false. In other words statements like \textit{If Alicia is mortal, then she is a dog} do not make sense logically. Let's take a look at some example of creating truth tables.
+
+\begin{example}{\egft{Determine the truth table for the statement $P\land\neg P$}}\label{eg:fallacy}
+	In order to show the steps, we will determine the truth values for $P$, $\neg P$, and $P\land\neg P$ individually.
+	\begin{center}
+		\begin{tabular}{c | c | c}
+			$P$ & $\neg P$ & $P\land\neg P$ \\
+			\hline
+			$T$ & $F$      & $F$\\
+			$F$ & $T$      & $F$
+		\end{tabular}
+	\end{center}
+    Here, we have a statement that is always false. Such a statement is called a contradiction. Contradictions will be of great use to us later when we look at proof techniques.
+\end{example}
+
+\begin{example}{\egft{Determine the truth table for the statement $P\lor \neg P$}}\label{eg:tautology}
+    \begin{center}
+		\begin{tabular}{c | c | c}
+			$P$ & $\neg P$ & $P\lor\neg P$ \\
+			\hline
+			$T$ & $F$      & $T$\\
+			$F$ & $T$      & $T$
+		\end{tabular}
+	\end{center}
+    This is the opposite of what we had in \cref{eg:fallacy}, and is called a tautology.
+\end{example}
 
 At this point, you may be wondering what happens if $P = Q$. We call this
 
@@ -96,30 +122,26 @@ Before we finish this section, we will introduce a few more logical operators an
 The exclusive disjunction, often referred to as \textit{exclusive or} or \textit{xor}, is not as useful as the next logical operator.
 
 \begin{definition}{\deft{Biconditional Implication}}
-	Let $P$ and $Q$ be statements. Then the biconditional implication of $P$ and $Q$ is the statement $(P\to Q)\land(Q\to P)$, denoted $P\iff Q$.
+	Let $P$ and $Q$ be statements. Then the biconditional implication of $P$ and $Q$ is the statement $(P\implies Q)\land(Q\implies P)$, denoted $P\iff Q$.
 \end{definition}
 
-The biconditional is often referred to by \textit{if and only if}, or, since mathematicians don't like to write a lot, \textit{iff}. This is a very powerful tool since it allows us to evaluate implication in both directions; it is also a slight annoyance, since we will have to prove both direction of statements that contain iff.
+The biconditional is often referred to by \textit{if and only if}, or, since mathematicians don't like to write a lot, \textit{iff}. This is a very powerful tool since it allows us to evaluate implication in both directions; it is also a slight annoyance, since we will have to prove both direction of statements that contain \textit{iff}.
 
-\subsection*{Problems}
-\begin{enumerate}
-	\item Evaluate the truth table for $(P\lor Q)\land\neg(P\land Q)$. What is this statement equivalent to?\label{prob:xor}
-	\item Determine the truth table for $P \iff Q$, based on the definition using implication and conjunction.
-	\item Determine if the following logical statements are equivalent.
-	      \begin{enumerate}
-	      	\item $(P\to Q)$ and $(P\land Q) \lor \neg(P\to Q)$.
-	      	      %TODO -- come up with more
-	      \end{enumerate}
-	\item Prove the second logical equivalence in DeMorgan's law.\label{prob:demorgan}
-	\item If we have 3 logical statements, how many rows will we have in a given truth table? What about 4? $n$?
-\end{enumerate}
+\subsection{Quantifiers}
 
-\newpage
+Thus far, we've dealt with only single statements $P$ and $Q$. This is a luxury; we are usually dealing with what is known as an
+\begin{definition}{\deft{Open Sentence}}
+    An open sentence is a statement with one or more variables that come from a prescribed collection of possible variables. The is written as $P(x)$ where $x$ is within the collection of possible values.
+\end{definition}
+We now have statements that can take on different values based on the value provided. For example, consider the living creatures within Emily's household as the collection, and the statement $P(x)= x$ is a human. We can ask $P(\text{Emily})$, and we will find that the value is $T$. However, if we ask $P(\text{Rex})$ where Rex is Emily's dog, then the statement is false. Hence, there are \textit{some} living creatures in Emily's household that are humans, and some that are not. Now suppose Emily is a wealthy entrepreneur who own an animal shelter. When the shelter closes, we can ask $Q(x)=x$ is a dog. In this case, we will find that when no humans are in the shelter, there are only dogs, so $Q(x)=T$ \textit{for all} $x$ in the shelter. This leads us to the concept of quantifiers.
 
-\section{Proofs}
+\begin{definition}{\deft{Universal Quantifier}}
+    Let $P(x)$ be an open sentence and let the collection of allowed values of $x$ be called $S$. The universal quantifier is the allowance of all $x$ to produce $P(x)=T$. In other words, the statement $P(x)=T$ for every $x$ in $S$. We use the symbol $\forall$.
+\end{definition}
 
-We will now begin to look at basic types of proof techniques. 
+\begin{definition}{\deft{Existential Quantifier}}
+    Let $P(x)$ be an open sentence and let the collection of allowed values of $x$ be called $S$. The existential quantifier, $\exists$, is the allowance of at least one $x$ in $S$ to produce $P(x)=T$. In other words, $P(x)=T$ for at least one $x$ in $S$.
+\end{definition}
 
-\newpage
-
-\section{Sets}
+% TODO -- is this right?
+Note that it is possible that neither quantifier applies. In that case, we simply say there is no $x$ that works. Quantifiers can also be negated; the negation of $\forall$ is $\exists$ and the negation of $\exists$ is $\forall$.
