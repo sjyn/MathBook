@@ -1,1 +1,112 @@
 \chapter{Solutions to Selected Problems}
+
+\section{Groups}
+\begin{compactenum}
+    \item
+    \begin{compactenum}
+        \item $\ZZ=<1>$
+        \item $\ZZ_{6}\times \ZZ_{2}$ since there is no element of order 12
+        \item $Q_{8}, Dih_{4}, Sym_{n}$
+        \item $\ZZ_{2}\times \ZZ_{2}\cong V_{4}$
+        \item $\ZZ_{4}\not\cong V_{4}$
+        \item $Q_{8}\not\cong\ZZ_{8}\not\cong Dih_{4}$
+        \item $SL_{n}(\RR)\normal GL_{n}(\RR)$
+        \item
+        \item
+    \end{compactenum}
+
+    \item
+    \item $ab=e\implies abb^{-1}=b^{-1}\implies ae=b^{-1}\implies a=b^{-1}$
+
+    \item
+        \begin{minipage}{0.5\textwidth}
+
+            \[
+                \begin{array}{c | c c c c}
+
+                \end{array}
+            \]
+        \end{minipage}
+        \begin{minipage}{0.5\textwidth}
+            \[
+                \begin{array}{c | c c c c}
+
+                \end{array}
+            \]
+        \end{minipage}
+
+    \item Recall that every element in $\ZZ_{p}$ has an inverse if $p$ is prime. The operation is the same as regular multiplication, so associativity follows almost immediately. The identity must be in the group since $p\equiv0\mod p$.
+
+    \item Neither group is cyclic since they cannot be generated. To show this, assume that there is an element that generates the group and show that you can find an element not in the form.
+
+    \item Suppose otherwise and use the division algorithm to arrive at the conclusion that the remainder of division must be 0, forming a contradiction.
+
+    \item Let $z,\zeta\in Z(G)$. Then
+    \[
+        z\zeta g = z g \zeta = g z\zeta.
+    \]
+
+    \item We need to show it is a subgroup and that it is normal.
+    \begin{quote}
+        \underline{Closure:} Let $A,B\in PSL_{n}(\RR)$. Then
+        \[
+            |\det(A)\det(B)|=|1\cdot1|=|1|=1.
+        \]
+        \underline{Identity:} $|\det(I_{n})|=|1|=1$.\\
+        \underline{Inverses:} Let $A\in PSL_{n}(\RR)$. Then
+        \[
+            |\det(A^{-1})|=|\det(A)^{-1}|=|1^{-1}|=|1|=1.
+        \]
+        \underline{Normality:} Let $G\in GL_{n}(\RR)$ and $A\in PSL_{n}(\RR)$. Then
+        \[
+            |\det(G)\det(A)\det(G^{-1})|=|\det(G)\det(G^{-1})|=|\det(G)\det(G)^{-1}|=|1|=1.
+        \]
+    \end{quote}
+
+    \item
+    \begin{compactenum}
+        \item
+        \[
+            |4|=\frac{20}{\gcd(20,4)}=\frac{20}{4} = 5.
+        \]
+        \item
+        \[
+            |8| = \frac{1000}{\gcd(1000,8)}=\frac{1000}{8}= 125.
+        \]
+        \item
+        \[
+            |(1\ 2\ 4)(3\ 6\ 5\ 7)(9\ 12)|=\lcm(3,4,2)=12.
+        \]
+    \end{compactenum}
+
+    \item
+    \[
+        \left|\fgroup{Sym_{3}}{<(1\ 2\ 3)>}\right|=\frac{|Sym_{3}|}{|<(1\ 2\ 3)>|}
+        =\frac{|Sym_{3}|}{|(1\ 2\ 3)|} = \frac{3!}{3} = 2.
+    \]
+
+    \item
+    \begin{compactenum}
+        \item $\sigma=(1\ 2\ 4\ 5\ 3)$, $\tau=(1\ 3\ 2\ 5)$.
+        \item $\sigma\tau=(2\ 3\ 4\ 5)$
+        \item $\tau\sigma=(1\ 5\ 2\ 4)$
+        \item $\sigma^{2}=(1\ 4\ 3\ 2\ 5)$
+        \item $\tau^{-1}=(1\ 5\ 2\ 3)$
+        \item $\tau=(1\ 3)(3\ 2)(2\ 5)$
+        \item $\sgn(\sigma)=1$
+    \end{compactenum}
+
+    \item
+    \begin{compactenum}
+        \item
+        \begin{quote}
+            \underline{Closure:} Let $a,b\in H\cap K$. Then $a,b\in H$ and $a,b\in K$, so $ab\in H$ and $ab\in K$. Therefore $ab\in H\cap K$.\\
+            \underline{Inverses:} Let $a\in H\cap K$. Then $a\in H\implies a^{-1}\in H$ and $a\in K\implies a^{-1}\in K$, so $a^{-1}\in H\cap K$.\\
+            \underline{Identity:} $H\leq G\implies e\in H$ and $K\leq G\implies e\in K$, so $e\in H\cap K$.
+        \end{quote}
+        \item
+        \begin{quote}
+            Suppose $H\cup K\leq G$ with $H\not\subset K$. Then $\exists k\in K\setminus H\suchthat $
+        \end{quote}
+    \end{compactenum}
+\end{compactenum}

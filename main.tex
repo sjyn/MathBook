@@ -6,11 +6,14 @@
 \usepackage{epigraph}
 \usepackage{titlesec}
 \usepackage{color}
+\usepackage{longtable}
 \usepackage[toc,page]{appendix}
-\usepackage{amsthm}
+\usepackage{paralist}
 \usepackage{cleveref}
 
-\renewcommand\qedsymbol{$\blacksquare$}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
 \definecolor{defgreen}{RGB}{95,174,87}
 \definecolor{egblue}{RGB}{35, 104, 99}
 \definecolor{thred}{RGB}{167, 56, 62}
@@ -21,6 +24,11 @@
 \newcommand{\CC}{\mathbb{C}}
 \newcommand{\NN}{\mathbb{N}}
 \newcommand{\suchthat}{\text{ s.t. }}
+\newcommand{\lcm}{\text{lcm}}
+\newcommand{\sgn}{\text{sgn}}
+
+\newcommand{\normal}{\triangleleft}
+\newcommand{\fgroup}[2]{{\raisebox{.2em}{$#1$}\left/\raisebox{-.2em}{$#2$}\right.}}
 
 \DeclareRobustCommand\iff{\Leftrightarrow}
 \DeclareRobustCommand\implies{\Rightarrow}
@@ -29,22 +37,57 @@
 \newcommand{\egft}[1]{\color{egblue} \textbf{#1}}
 \newcommand{\thmft}[1]{\color{thred} \textbf{#1}}
 
-\theoremstyle{plain}
-\newtheorem{theorem}{Theorem}
-\newtheorem*{utheorem}{Theorem}
-\newtheorem*{udefinition}{Definition}
+\newcounter{definition}[section]
+\newenvironment{definition}[1]
+{
+    \refstepcounter{definition}
+    \begin{quote}
+    \textbf{\deft{\underline{Definition \thesection.\thedefinition} #1}}\\
+}
+{
+    \end{quote}
+}
 
-\newtheoremstyle{defBG}{0.5cm}{0.5cm}{}{0.5cm}{\color{defgreen}}{.}{ }{}
-\theoremstyle{defBG}
-\newtheorem{definition}{Definition}[section]
+\newcounter{example}[section]
+\newenvironment{example}[1]
+{
+    \refstepcounter{example}
+    \begin{quote}
+    \textbf{\egft{\underline{Example \thesection.\theexample} #1}}\\
+}
+{
+    \end{quote}
+}
 
-\newtheoremstyle{egBG}{0.5cm}{0.5cm}{}{0.5cm}{\color{egblue}}{.}{ }{}
-\theoremstyle{egBG}
-\newtheorem{example}{Example}[section]
+\newcounter{theorem}[section]
+\newenvironment{theorem}[1]
+{
+    \refstepcounter{theorem}
+    \begin{quote}
+    \textbf{\thmft{\underline{Theorem \thesection.\thetheorem} #1}}\\
+}
+{
+    \end{quote}
+}
 
-\newtheoremstyle{named}{}{}{\itshape}{}{\bfseries}{.}{.5em}{\color{thred} \thmnote{#3}}
-\theoremstyle{named}
-\newtheorem{namedtheorem}{Theorem}
+\newenvironment{corollary}
+{
+\begin{quote}
+\textbf{\thmft{\underline{Corollary to \thesection.\thetheorem}}}
+}
+{
+    \end{quote}
+}
+
+\newenvironment{proof}
+{
+    \begin{quote}
+    \textit{\textbf{Proof: }}
+}
+{
+\noindent\\ \hspace*{\fill}$\blacksquare$
+\end{quote}
+}
 
 \title{Undergraduate Mathematics}
 \date{}
