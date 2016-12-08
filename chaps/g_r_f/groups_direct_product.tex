@@ -1,0 +1,20 @@
+\section{Direct Products}
+The idea of a direct product of groups is the extension of the Cartesian product of sets onto groups. We won't spend a lot of time examining these structures here, but they will come up again soon. Recall that the Cartesian product, or direct product of two sets was given by
+
+\[
+    A\times B=\{(a,b):a\in A\land b\in B\}.
+\]
+
+\noindent It should be no surprise that we define the direct product of two groups in the same way; the only caveat here is that we need a way to handle the operations from the respective groups.
+
+\begin{definition}{Direct Product of Groups}
+    Let $(G_{1},*_{1})$ and $(G_{2},*_{2})$ be groups. The direct product of $G_{1}$ and $G_{2}$ is defined to be
+    \[
+        G_{1}\times G_{2}=\{(g_{1},g_{2}): g_{1}\in G_{2}\land G_{2}\in g_{2}\}
+    \]
+    with the operation defined to be
+    \[
+        (g_{1},g_{2})(\gamma_{1},\gamma_{2})=(g_{1}*_{1}\gamma_{1},g_{2}*_{2}\gamma_{2}).
+    \]
+\end{definition}
+The direct product of two groups will be a group, since $(e_{1},e_{2})$ is in the product, $(a,b)\implies (a^{-1},b^{-1})$ is in the product, and associativity is inherited from the original operators. 

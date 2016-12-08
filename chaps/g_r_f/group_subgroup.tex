@@ -82,11 +82,29 @@ This corollary is the pinnacle of our talk about cyclic subgroups since it allow
 
 	\begin{center}
 		\begin{tikzpicture}[node distance=2cm]
-			\node(20) {$<20>$}
-			\node 
+			\node(20) {$<20>$};
+			\node(10)  	[below right of=20] {$<10>$};
+			\node(4)  	[below left of=20]  {$<4>$};
+			\node(5) 	[below of=10] {$<5>$};
+			\node(2)	[below of=4] {$<2>$};
+			\node(1)	[below left of=5] {$<1>$};
+
+			\draw(20) -- (10);
+			\draw(20) -- (4);
+			\draw(2) -- (4);
+			\draw(2) -- (10);
+			\draw(5) -- (10);
+			\draw(2) -- (1);
+			\draw(5) -- (1);
 		\end{tikzpicture}
 	\end{center}
+
+	Here, the lines imply inclusion from top to bottom; that is
+		\[<20>\subset<4>\subset<2>\subset<1>,\]
+	for example. We won't spend a lot of time looking at subgroup lattices, but the idea of how to create them is more or less the same for our purposes.
 \end{example}
+
+Before we finish this section, we will look at some examples of groups and their subgroups.
 
 \subsection*{The General Linear Group}
 Numbers are just a small portion of the type of objects that sets can contain. One group that does not contain numbers is the General Linear Group, $(GL_{n}(\RR),\cdot)$, defined by

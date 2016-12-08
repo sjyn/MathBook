@@ -10,29 +10,32 @@
 \contentsline {section}{\numberline {3.1}Introduction}{17}
 \contentsline {section}{\numberline {3.2}Cyclic Groups}{20}
 \contentsline {section}{\numberline {3.3}Subgroups}{23}
-\contentsline {chapter}{\numberline {4}Rings and Fields}{29}
-\contentsline {part}{II\hspace {1em}Calculus}{31}
-\contentsline {chapter}{\numberline {5}Real Analysis}{33}
-\contentsline {chapter}{\numberline {6}Multi-variable Calculus}{35}
-\contentsline {chapter}{\numberline {7}Complex Analysis}{37}
-\contentsline {chapter}{\numberline {8}Ordinary Differential Equation}{39}
-\contentsline {chapter}{\numberline {9}Partial Differential Equations}{41}
-\contentsline {part}{III\hspace {1em}Statistics and Probability}{43}
-\contentsline {chapter}{\numberline {10}Probability}{45}
-\contentsline {chapter}{\numberline {11}Graph Theory}{47}
-\contentsline {chapter}{\numberline {12}Statistics}{49}
-\contentsline {part}{IV\hspace {1em}Case Studies}{51}
-\contentsline {chapter}{\numberline {13}Linear Algebra}{53}
-\contentsline {chapter}{\numberline {14}p-adic Analysis}{55}
-\contentsline {chapter}{Appendices}{57}
-\contentsline {chapter}{\numberline {A}Major Theorems}{59}
-\contentsline {chapter}{\numberline {B}Important Definitions}{61}
-\contentsline {chapter}{\numberline {C}Tests for Convergence}{63}
-\contentsline {section}{\numberline {C.1}Series in $\mathbb {R}$}{63}
-\contentsline {section}{\numberline {C.2}Series in $\mathbb {C}$}{65}
-\contentsline {section}{\numberline {C.3}Power Series in $\mathbb {Q}_{p}$}{65}
-\contentsline {chapter}{\numberline {D}Common Riemann Integration Techniques}{67}
-\contentsline {chapter}{\numberline {E}Distribution Tables}{69}
-\contentsline {section}{\numberline {E.1}Normal (Gaussian) Distribution}{69}
-\contentsline {chapter}{\numberline {F}Solutions to Selected Problems}{71}
-\contentsline {section}{\numberline {F.1}Groups}{71}
+\contentsline {section}{\numberline {3.4}The Symmetric Group}{27}
+\contentsline {section}{\numberline {3.5}Normality, Cosets, and Factor Groups}{31}
+\contentsline {section}{\numberline {3.6}Homomorphisms}{31}
+\contentsline {chapter}{\numberline {4}Rings and Fields}{33}
+\contentsline {part}{II\hspace {1em}Calculus}{35}
+\contentsline {chapter}{\numberline {5}Real Analysis}{37}
+\contentsline {chapter}{\numberline {6}Multi-variable Calculus}{39}
+\contentsline {chapter}{\numberline {7}Complex Analysis}{41}
+\contentsline {chapter}{\numberline {8}Ordinary Differential Equation}{43}
+\contentsline {chapter}{\numberline {9}Partial Differential Equations}{45}
+\contentsline {part}{III\hspace {1em}Statistics and Probability}{47}
+\contentsline {chapter}{\numberline {10}Probability}{49}
+\contentsline {chapter}{\numberline {11}Graph Theory}{51}
+\contentsline {chapter}{\numberline {12}Statistics}{53}
+\contentsline {part}{IV\hspace {1em}Case Studies}{55}
+\contentsline {chapter}{\numberline {13}Linear Algebra}{57}
+\contentsline {chapter}{\numberline {14}p-adic Analysis}{59}
+\contentsline {chapter}{Appendices}{61}
+\contentsline {chapter}{\numberline {A}Major Theorems}{63}
+\contentsline {chapter}{\numberline {B}Important Definitions}{65}
+\contentsline {chapter}{\numberline {C}Tests for Convergence}{67}
+\contentsline {section}{\numberline {C.1}Series in $\mathbb {R}$}{67}
+\contentsline {section}{\numberline {C.2}Series in $\mathbb {C}$}{69}
+\contentsline {section}{\numberline {C.3}Power Series in $\mathbb {Q}_{p}$}{69}
+\contentsline {chapter}{\numberline {D}Common Riemann Integration Techniques}{71}
+\contentsline {chapter}{\numberline {E}Distribution Tables}{73}
+\contentsline {section}{\numberline {E.1}Normal (Gaussian) Distribution}{73}
+\contentsline {chapter}{\numberline {F}Solutions to Selected Problems}{75}
+\contentsline {section}{\numberline {F.1}Groups}{75}
