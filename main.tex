@@ -10,6 +10,9 @@
 \usepackage[toc,page]{appendix}
 \usepackage{paralist}
 \usepackage{cleveref}
+\usepackage{transparent}
+\usepackage{multirow}
+\usepackage[many]{tcolorbox}
 
 \usepackage{tikz}
 \usetikzlibrary{positioning}
@@ -17,6 +20,25 @@
 \definecolor{defgreen}{RGB}{95,174,87}
 \definecolor{egblue}{RGB}{35, 104, 99}
 \definecolor{thred}{RGB}{167, 56, 62}
+
+\newtcolorbox{defbox}[1][]{
+    width=0.9\textwidth,
+    arc=0mm,
+    colback=defgreen!10,
+    colframe=defgreen!0
+}
+\newtcolorbox{thmbox}[1][]{
+    width=0.9\textwidth,
+    arc=0mm,
+    colback=thred!10,
+    colframe=thred!0
+}
+\newtcolorbox{egbox}[1][]{
+    width=0.9\textwidth,
+    arc=0mm,
+    colback=egblue!10,
+    colframe=egblue!0
+}
 
 \newcommand{\RR}{\mathbb{R}}
 \newcommand{\ZZ}{\mathbb{Z}}
@@ -41,42 +63,50 @@
 \newenvironment{definition}[1]
 {
     \refstepcounter{definition}
-    \begin{quote}
+    \begin{center}
+    \begin{defbox}
     \textbf{\deft{\underline{Definition \thesection.\thedefinition} #1}}\\
 }
 {
-    \end{quote}
+    \end{defbox}
+    \end{center}
 }
 
 \newcounter{example}[section]
 \newenvironment{example}[1]
 {
     \refstepcounter{example}
-    \begin{quote}
+    \begin{center}
+    \begin{egbox}
     \textbf{\egft{\underline{Example \thesection.\theexample} #1}}\\
 }
 {
-    \end{quote}
+    \end{egbox}
+    \end{center}
 }
 
 \newcounter{theorem}[section]
 \newenvironment{theorem}[1]
 {
     \refstepcounter{theorem}
-    \begin{quote}
+    \begin{center}
+    \begin{thmbox}
     \textbf{\thmft{\underline{Theorem \thesection.\thetheorem} #1}}\\
 }
 {
-    \end{quote}
+    \end{thmbox}
+    \end{center}
 }
 
 \newenvironment{corollary}
 {
-\begin{quote}
-\textbf{\thmft{\underline{Corollary to \thesection.\thetheorem}}}
+    \begin{center}
+    \begin{thmbox}
+    \textbf{\thmft{\underline{Corollary to \thesection.\thetheorem}}}
 }
 {
-    \end{quote}
+    \end{thmbox}
+    \end{center}
 }
 
 \newenvironment{proof}
