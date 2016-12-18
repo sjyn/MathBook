@@ -8,34 +8,34 @@
 \contentsline {chapter}{\numberline {2}Number Theory}{17}
 \contentsline {chapter}{\numberline {3}Groups}{19}
 \contentsline {section}{\numberline {3.1}Introduction}{19}
-\contentsline {section}{\numberline {3.2}Cyclic Groups}{23}
-\contentsline {section}{\numberline {3.3}Subgroups}{25}
-\contentsline {section}{\numberline {3.4}The Symmetric Group}{30}
-\contentsline {section}{\numberline {3.5}Normality, Cosets, and Factor Groups}{37}
-\contentsline {section}{\numberline {3.6}Homomorphisms}{43}
-\contentsline {chapter}{\numberline {4}Rings and Fields}{45}
-\contentsline {part}{II\hspace {1em}Calculus}{47}
-\contentsline {chapter}{\numberline {5}Real Analysis}{49}
-\contentsline {chapter}{\numberline {6}Multi-variable Calculus}{51}
-\contentsline {chapter}{\numberline {7}Complex Analysis}{53}
-\contentsline {chapter}{\numberline {8}Ordinary Differential Equation}{55}
-\contentsline {chapter}{\numberline {9}Partial Differential Equations}{57}
-\contentsline {part}{III\hspace {1em}Statistics and Probability}{59}
-\contentsline {chapter}{\numberline {10}Probability}{61}
-\contentsline {chapter}{\numberline {11}Graph Theory}{63}
-\contentsline {chapter}{\numberline {12}Statistics}{65}
-\contentsline {part}{IV\hspace {1em}Case Studies}{67}
-\contentsline {chapter}{\numberline {13}Linear Algebra}{69}
-\contentsline {chapter}{\numberline {14}p-adic Analysis}{71}
-\contentsline {chapter}{Appendices}{73}
-\contentsline {chapter}{\numberline {A}Major Theorems}{75}
-\contentsline {chapter}{\numberline {B}Important Definitions}{77}
-\contentsline {chapter}{\numberline {C}Tests for Convergence}{79}
-\contentsline {section}{\numberline {C.1}Series in $\mathbb {R}$}{79}
-\contentsline {section}{\numberline {C.2}Series in $\mathbb {C}$}{81}
-\contentsline {section}{\numberline {C.3}Power Series in $\mathbb {Q}_{p}$}{81}
-\contentsline {chapter}{\numberline {D}Common Riemann Integration Techniques}{83}
-\contentsline {chapter}{\numberline {E}Distribution Tables}{85}
-\contentsline {section}{\numberline {E.1}Normal (Gaussian) Distribution}{85}
-\contentsline {chapter}{\numberline {F}Solutions to Selected Problems}{87}
-\contentsline {section}{\numberline {F.1}Groups}{87}
+\contentsline {section}{\numberline {3.2}Cyclic Groups}{24}
+\contentsline {section}{\numberline {3.3}Subgroups}{26}
+\contentsline {section}{\numberline {3.4}The Symmetric Group}{31}
+\contentsline {section}{\numberline {3.5}Normality, Cosets, and Factor Groups}{38}
+\contentsline {section}{\numberline {3.6}Homomorphisms}{44}
+\contentsline {chapter}{\numberline {4}Rings and Fields}{47}
+\contentsline {part}{II\hspace {1em}Calculus}{49}
+\contentsline {chapter}{\numberline {5}Real Analysis}{51}
+\contentsline {chapter}{\numberline {6}Multi-variable Calculus}{53}
+\contentsline {chapter}{\numberline {7}Complex Analysis}{55}
+\contentsline {chapter}{\numberline {8}Ordinary Differential Equation}{57}
+\contentsline {chapter}{\numberline {9}Partial Differential Equations}{59}
+\contentsline {part}{III\hspace {1em}Statistics and Probability}{61}
+\contentsline {chapter}{\numberline {10}Probability}{63}
+\contentsline {chapter}{\numberline {11}Graph Theory}{65}
+\contentsline {chapter}{\numberline {12}Statistics}{67}
+\contentsline {part}{IV\hspace {1em}Case Studies}{69}
+\contentsline {chapter}{\numberline {13}Linear Algebra}{71}
+\contentsline {chapter}{\numberline {14}p-adic Analysis}{73}
+\contentsline {chapter}{Appendices}{75}
+\contentsline {chapter}{\numberline {A}Major Theorems}{77}
+\contentsline {chapter}{\numberline {B}Important Definitions}{79}
+\contentsline {chapter}{\numberline {C}Tests for Convergence}{81}
+\contentsline {section}{\numberline {C.1}Series in $\mathbb {R}$}{81}
+\contentsline {section}{\numberline {C.2}Series in $\mathbb {C}$}{83}
+\contentsline {section}{\numberline {C.3}Power Series in $\mathbb {Q}_{p}$}{83}
+\contentsline {chapter}{\numberline {D}Common Riemann Integration Techniques}{85}
+\contentsline {chapter}{\numberline {E}Distribution Tables}{87}
+\contentsline {section}{\numberline {E.1}Normal (Gaussian) Distribution}{87}
+\contentsline {chapter}{\numberline {F}Solutions to Selected Problems}{89}
+\contentsline {section}{\numberline {F.1}Groups}{89}

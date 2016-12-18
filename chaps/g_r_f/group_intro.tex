@@ -1,5 +1,7 @@
 \section{Introduction}
-Our study of algebraic structures begin with the idea of a group. As it turns out, we have actually seen examples of groups without even knowing it: $\ZZ$, $\RR$, $\CC$, and $\ZZ_{p}$ are just a few groups. The set alone is not enough to be a group even though it is standard to write is as such. We need a set and a \textit{binary operator} in order to have a group.
+Our study of algebraic structures begin with the idea of a group.
+As it turns out, we have actually seen examples of groups without even knowing it: $\ZZ$, $\RR$, $\CC$, and $\ZZ_{p}$ are just a few groups.
+Groups are defined chiefly by a set as well as what we call a \textit{binary operator}.
 \begin{definition}{\deft{Binary Operation}}
 	Let $S$ be a set. A binary operation on $S$ is a mapping
 	\[*:S\times S \to S.\]
@@ -9,7 +11,27 @@ We have also seen various binary operations such as addition and multiplication.
 \begin{example}{\egft{Show that subtraction is a binary operation on $\ZZ$, but not on $\NN$}}
     To see this, let $a,b\in\ZZ$. It is clear that $a-b\in\ZZ\ \forall a,b\in\ZZ$. However, take $a,b\in\NN\suchthat\ a<b$. Then $a-b<0\implies a-b\notin \NN$.
 \end{example}
-There are other binary operations that are less common, such as $a*b=\max{(a,b)}$ on $\RR$, or $f\circ g$ where $f$ and $g$ are functions. We want to keep these operations in mind, as they will play an important role in later sections. With the knowledge of binary operations, we can now formally define a group.
+There are other binary operations that are less common, such as $a*b=\max{(a,b)}$ on $\RR$, or $f\circ g$ where $f$ and $g$ are functions. We want to keep these operations in mind, as they will play an important role in later sections.
+The operator is what determines the properties which we require for a group; we will define a group by introducing substructures of a group that together form a group.
+The first structure is called a \textit{semigroup}, and is defined as
+\begin{definition}{Semigroup}
+	Let $S$ be a set and $*$ be a binary operation. A semigroup is the pair $(S,*)$ such that
+	\[
+		a,b,c\in S\implies (a*b)*c=a*(b*c).
+	\]
+\end{definition}
+In other words, the semigroup is a set paired with an associative operation.
+An example of a semigroup would be $(\ZZ,+)$, or the integers under addition; we know that the operation of addition is associative on the integers.
+From a semigroup we can construct what is known as a monoid.
+\begin{definition}{Monoid}
+	Let $(M,*)$ be a semigroup. Then $M$ is a monoid if
+	\[
+		\exists e\in M\suchthat m*e=e*m=m\ \forall m\in M.
+	\]
+\end{definition}
+Hence we introduce the concept of an identity element typically called $e$.
+This identity element, when combined with the binary operation, should map every element back to itself; it is no surprise that $(\ZZ,+)$ is also a monoid, since $0+a=a+0=a\ \forall a\in\ZZ$.
+A group turns out to be nothing more than a monoid with one extra property.
 
 \begin{definition}{\deft{Group}}
 	Let $G$ be a set and $*$ be a binary operator. Then the pair $(G,*)$ is a group provided that
@@ -19,7 +41,11 @@ There are other binary operations that are less common, such as $a*b=\max{(a,b)}
 		\item Every element in $G$ has an inverse; that is $a\in G\implies a^{-1}\in G \suchthat a*a^{-1}=a^{-1}*a=e\ \forall a\in G$.
 	\end{enumerate}
 \end{definition}
-This is one of the key definitions of this chapter. When we want to prove something is a group, we must prove all three axioms listed in the definition. Often associativity is the most difficult; as such, it is often helpful to try and prove identity first followed by inverses. Note that the group is a set \textit{and} an operator. It is the operator that determines what the identity is, what the inverse of an element is, and whether or not elements associate.
+This is the key definition of this chapter.
+When we want to prove something is a group, we must prove all three axioms, typically called the group axioms, listed in the definition.
+Often associativity is the most difficult; as such, it is often helpful to try and prove identity first followed by inverses.
+Note that the group is a set \textit{and} an operator.
+It is the operator that determines what the identity is, what the inverse of an element is, and whether or not elements associate.
 Let's look at an example of proving something is a group.
 
 \begin{example}{\egft{Show that $(\ZZ,+)$ is a group.}}
@@ -31,7 +57,10 @@ Let's look at an example of proving something is a group.
     \]
 \end{example}
 
-The integers under addition are an example of a group that we've seen before. In fact $(\RR,+), (\CC,+)$, and $(\QQ,+)$ all form groups. The next example is of a group of sets.
+The integers under addition are an example of a group that we've seen before.
+In fact $(\RR,+), (\CC,+)$, and $(\QQ,+)$ all form groups under addition, but we can certainly form groups of different objects with different operations.
+Consider the power set of a set.
+If we pair the power set with the symmetric difference operation then we actually get a group, as the following example shows.
 
 \begin{example}{\egft{Let $X$ be a set, and let $\mathcal{P}(X)$ be the power set of $X$. Show $(\mathcal{P}(X),\Delta)$ is a group.}}
     Recall that $\Delta$ is the symmetric difference operator, defined as $A\Delta B= A\cup B\setminus A\cap B$. We won't do the associativity here (see problem \ref{prob:sym_dif_ass}), but it turns out that it is. To show the identity, we need a set $E\subset X \suchthat A\Delta E=A\ \forall A\in\mathcal{P}(X)$. It turns out that the emptyset does the job:
@@ -48,7 +77,9 @@ The integers under addition are an example of a group that we've seen before. In
     \end{align*}
 \end{example}
 
-Up to now, we've shown the existence of inverses and identities within groups, but what about uniqueness? It turns out that the following theorems guarantee us the uniqueness that we so love.
+Up to now, we've shown the existence of inverses and identities within groups, but what about uniqueness?
+Luckily, the binary operations do in fact guarantee uniqueness for various reasons that we will see later.
+We can prove the uniqueness properties with relative ease.
 
 \begin{theorem}{}
 	Let $*$ be a binary operation on a set $G$. If $G$ contains an identity element $e$, then $e$ is unique.
@@ -73,17 +104,26 @@ Up to now, we've shown the existence of inverses and identities within groups, b
 	\end{align*}
 \end{proof}
 
-One important idea to take away from the last proof is that we are never guaranteed commutativity of elements. We chose to perform the operation on the left on one side of the equality, so we \textit{must} also perform the operation on the left on the other side of the equation. Groups that commute are called \textit{abelian groups}.
+One important idea to take away from the last proof is that we are never guaranteed commutativity of elements.
+We chose to perform the operation on the left on one side of the equality, so we \textit{must} also perform the operation on the left on the other side of the equation.
+When we do have commutativity of elements, we get very special properties; hence we give such groups a special names.
+Groups in which every elements commutes are called \textit{abelian groups}.
 \begin{definition}{Abelian Group}
 	Let $(G,*)$ be a group. If $a*b=b*a\ \forall a,b\in G$, then we call $G$ abelian.
 \end{definition}
-This will turn out to be an incredibly important distinction as we talk more about groups.
+This will turn out to be an incredibly important distinction as we talk more about groups as abelian groups tend to be much nicer to deal with than non-abelian groups.
 
 \subsection*{Cayley Tables}
-Recall that we mentioned $(\ZZ,+)$ is a group; in fact it is an infinite abelian group. For finite groups, we can create what is known as a Cayley (or multiplication) table to show the relationships between elements. Cayley tables, named after mathematician Arthur Cayley, can be used to compare groups, show that the group is abelian, and much more. Let's look at an example of how to construct such a table.
+Recall that we mentioned $(\ZZ,+)$ is a group; in fact it is an infinite abelian group, but this not need always be true.
+For finite groups (i.e. groups in which the defining set has finite size), we can create what is known as a Cayley (or multiplication) table to show the relationships between elements.
+Cayley tables, named after mathematician Arthur Cayley, can be used to compare groups, show that the group is abelian, and much more.
+Let's look at an example of how to construct such a table.
 
 \begin{example}{Construct the Cayley table for the $V_{4}$ group.}
-	Before we begin, it would help to know what the $V_{4}$ group is. The name comes from the German word \textit{Vierergruppe} which translates to \textit{four-group}. You may have guessed that is has 4 elements, which we call $a,b,c,$ and $e$ where $e$ is the identity. The Cayley table will help us to see how the operation is defined.
+	Before we begin, it would help to know what the $V_{4}$ group is.
+	The name comes from the German word \textit{Vierergruppe} which translates to \textit{four-group}.
+	You may have guessed that is has 4 elements, which we call $a,b,c,$ and $e$ where $e$ is the identity.
+	The Cayley table will help us to see how the operation is defined.
 	\[
 		\begin{array}{c | c c c c}
 			& e & a & b & c\\
@@ -97,7 +137,9 @@ Recall that we mentioned $(\ZZ,+)$ is a group; in fact it is an infinite abelian
 	We can read the operation via $row * column$, i.e. $a * b=c$.
 \end{example}
 
-We can use Cayley tables to compare groups. Note that this is not a proof that two groups are the same; we will discuss in depth what it means for two groups to be the same later.
+We can use Cayley tables to compare groups as well as show how the binary operation on the group is performed.
+Note that this is not a proof that two groups are the same; we will discuss in depth what it means for two groups to be the same later.
+Let us look at another example of creating a Cayley table.
 
 \begin{example}{Let $G=\ZZ_{4}$. Construct the Cayley table for $(G,+)$}
 	We have seen the group $\ZZ_{4}$ before; it is the integers modulo 4. As is turns out, the Cayley table looks very similar to that of $V_{4}$.
@@ -112,6 +154,8 @@ We can use Cayley tables to compare groups. Note that this is not a proof that t
 		\end{array}
 	\]
 \end{example}
+
+From our discussion of Number Theory, we know that the set $\ZZ_{n}$ is very important; it turns out that $\ZZ_{n}$ forms a group.
 
 \subsection*{The Integers Modulo $n$}
 When we talked about Cayley tables, we mentioned the group $\ZZ_{n}$ under addition. As it turns out, $\ZZ_{n}$ is a group for every $n\in\NN$ under addition. The addition in $\ZZ_{n}$ is not technically the same addition that we have in $\ZZ$, and the element $1\in\ZZ_{n}\neq 1\in\ZZ$, strictly speaking. Rather, the elements are \textit{equivalence classes}. We talked about these in the chapter on Number Theory and we showed that the operation was well defined.

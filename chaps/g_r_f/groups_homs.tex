@@ -1,1 +1,36 @@
 \section{Homomorphisms}
+
+At the end of our discussion of factor groups, we pointed out that there are some groups that look like and act like other groups.
+In this section, we will discuss in detail this phenomenon through the study of what are known as homomorphisms.
+Like many of the concepts covered in the study of groups, we have seen homomorphisms before but never called them by name; consider the following definition.
+
+\begin{definition}{Homomorphism}
+    Let $(G_{1},*_{1})$ and $(G_{2},*_{2})$ be groups. A homomorphism from $G_{1}$ to $G_{2}$ is a mapping
+    \[
+        \phi: G_{1}\to G_{2}\suchthat \phi(a*_{1}b)=\phi(a)*_{2}\phi(b).
+    \]
+\end{definition}
+This function that we call a homomorphism is just a structure preserving map.
+In the case of groups, we preserve the operations in the respective groups as well as inverses and identities.
+We have dealt with several homomorphisms in previous sections; consider the following examples.
+
+\begin{example}{Show $\det$ is a homomorphism from $GL_{n}(\RR)\to\RR$.}
+    Let $A,B\in GL_{n}(\RR)$. Then $\det(AB)=\det(A)\det(B)\in\RR$.
+\end{example}
+
+\begin{example}{Show $sgn$ is a homomorphism from $Sym_{n}\to\{\pm1\}$.}
+    We will show that the homomorphic nature of $sgn$ holds for one of the possible combinations of two permutations here.
+    Suppose $\sigma,\tau\in Sym_{n}$ with $sgn(\sigma)=1$ and $sgn(\tau)=1$. Then
+    \[
+        sgn(\sigma\tau)=1=1\cdot 1=sgn(\sigma)sgn(\tau).
+    \]
+    The other combinations of even and odd are left to you.
+\end{example}
+
+It is important to note that the definition of homomorphism does \textbf{not} require that $\phi$ be invertible, but when $\phi^{-1}$ is defined on $G_{2}$, we get some very special properties.
+
+\subsection*{Isomorphisms}
+The ability to invert functions is not something that we can often do; we have a special name for an invertible homomorphism.
+\begin{definition}{Isomorphism}
+    Let $\phi$ be a homomorphism from $G_{1}\to G_{2}$. We call $\phi$ an isomorphism if $\phi$ is bijective on $G_{1}$.
+\end{definition}
