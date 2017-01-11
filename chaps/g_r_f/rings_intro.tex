@@ -1,0 +1,42 @@
+\section{Introduction to Rings}
+
+In the previous chapter, we looked in depth at the concept of a group.
+Recall that groups are defined with one operation, which we called $*$; this need not alway be the case, however.
+Groups are simple in this aspect especially when compared to other structures such as a Ring or a Field.
+We will begin by defining a Ring.
+
+\begin{definition}{Ring}
+    Let $R$ be a set an let $+$ be the standard operation of addition and $\cdot$ be the standard operation of multiplication. We say $(R,+,\cdot)$ is a ring if
+    \begin{enumerate}
+        \item $(R,+)$ is an abelian group
+        \item multiplication is associative
+        \item multiplication distributes over addition.
+    \end{enumerate}
+\end{definition}
+
+We can see that a ring is a much more complex structure than a group, and in fact it contains groups within it, similar to the idea that all squares are rectangles but not all rectangles are squares.
+Like many of the structures in algebra, we have dealt with rings without even knowing it.
+The groups $(\RR, +)$ and $(\RR^{*},\cdot)$ form a ring $(\RR, +, \cdot)$ when combined.
+Note that the definition does \textit{not} require that $R$ be a group under multiplication; rather, we only need that multiplication is associative and that the distributive law holds.
+It is this fact that allows us to construct a ring from one of our favorite groups.
+
+\begin{example}{Show $\ZZ_{n}$ is a ring}
+    We already know that $\ZZ_{n}$ is abelian under addition by the definition of the operation. We define multiplication in the context to be
+    \[
+        \overline{ab}=\overline{a}\overline{b}\equiv ab\mod n.
+    \]
+    Hence
+    \begin{align*}
+        (\overline{a}\overline{b})\overline{c} &= \overline{ab}\overline{c}\\
+        &= \overline{abc}\\
+        &= \overline{a}\overline{bc}\\
+        &= \overline{a}(\overline{b}\overline{c}).
+    \end{align*}
+    The distributive law is trivial to show.
+\end{example}
+
+The concept of an identity element was crucial to our study of groups.
+The identity was determined by the operation over the set, and it is no different for rings.
+Here, we have two operations so we designate two identity elements, typically called 1 (for multiplication), and 0 (for addition).
+We were also concerned with the concept of inverse elements, but we must be careful.
+The additive inverse is guaranteed to us because of the fact that $(R,+)$ is a group, but we are not guaranteed a multiplicative inverse (although it is not impossible).

@@ -27,10 +27,225 @@ We have dealt with several homomorphisms in previous sections; consider the foll
     The other combinations of even and odd are left to you.
 \end{example}
 
-It is important to note that the definition of homomorphism does \textbf{not} require that $\phi$ be invertible, but when $\phi^{-1}$ is defined on $G_{2}$, we get some very special properties.
+Since homomorphisms act are structure preserving, we get some nice properties.
+Recall that groups must have identities; luckily homomorphisms \textit{\textbf{always}} map the identity in $G_{1}$ to the identity in $G_{2}$.
+Inverses are also preserved, that is
+\[
+    \phi(a^{-1})=\phi^{-1}(a).
+\]
+It also follows immediately that associativity is preserved with each groups' respective operation.
+More interestingly, however, is the question of whether or not properties not guaranteed by the definition of group are preserved.
+This includes ideas such as commutativity, cyclic nature, and subgroups.
+Let's take a look.
+
+\begin{theorem}{}
+    Let $G$ and $K$ be groups, and let $\phi: G\to K$ be a homomorphism. Then $H\leq G\implies \phi(H)\leq K$.
+\end{theorem}
+\begin{proof}
+    Let $H\leq G$. Note that
+    \[
+        \phi(H) = \{\phi(h) : h\in H\}.
+    \]
+    Let $a,b\in\phi(H)$.
+    Then $a=\phi(h_{1})$ and $b=\phi(h_{2})$, so $\phi(h_{1})\phi(h_{2})=\phi(h_{1}h_{2})$ (since $\phi$ is a hom), and we conclude $\phi(H)$ is closed.
+    We know that $H\leq G\implies e_{G}\in H$ and $\phi(e_{G})=e_{K}$, so the identity element is in $\phi(H)$.
+    Finally, $a\in \phi(H)\implies \exists h\in H\suchthat a=\phi(h)\implies a^{-1}=\phi(h)^{-1}=\phi^{-1}(h)$, so we have satisfied the inverse property of subgroups.
+    Therefore, $\phi(H)\leq K$.
+\end{proof}
+
+It turns out that a homomorphism between groups is not enough to guarantee preservation of commutativity or cyclic behavior.
+The determinant of a matrix, for example takes us from $GL_{n}(\RR)$, which is not abelian, to $\RR^{*}$, which is abelian.
+If we want to preserve this structure, we must add another condition to the homomorphism.
 
 \subsection*{Isomorphisms}
 The ability to invert functions is not something that we can often do; we have a special name for an invertible homomorphism.
 \begin{definition}{Isomorphism}
     Let $\phi$ be a homomorphism from $G_{1}\to G_{2}$. We call $\phi$ an isomorphism if $\phi$ is bijective on $G_{1}$.
 \end{definition}
+
+It is clear that homomorphisms such as $sgn$ and $\equiv$ are not isomorphisms.
+Before we look at isomorphisms in general, we will look at a special subset of isomorphisms called \textit{automorphisms}.
+
+\subsubsection{Automorphisms}
+On the surface, automorphisms are not the most interesting type of invertible hom.
+We define them as follows:
+
+\begin{definition}{Automorphism}
+    Let $G$ be a group and define an isomorphism $\psi: G\to G$. Then $\psi$ is called an automorphism.
+\end{definition}
+
+In other words, we are simply projecting the group back onto itself somehow.
+This is not an astounding fact; more interestingly is the group called the automorphism group.
+
+\begin{definition}{Automorphism Group on $G$}
+    Let $G$ be a group. Then the automorphism group on $G$, $Aut(G)$ is the group of all automorphisms on $G$.
+\end{definition}
+
+We claim that $Aut(G)$ is a group, and to prove this we will use a slightly different technique.
+Recall that isomorphisms are invertible functions.
+We have looked in depth at a particular group of invertible functions, namely $Sym_{n}$; hence, we will show that $Aut(G)\leq Sym_{G}$.
+
+\begin{proof}
+    To show closure, let $\psi,\lambda\in Aut(G)$.
+    We need $\psi\lambda$ to be an invertible homomorphism in order to have closure.
+    Consider
+    \[
+        (\psi\circ\lambda)^{-1}=\lambda^{-1}\psi^{-1},
+    \]
+    which implies the product is invertible.
+    Consider
+    \begin{align*}
+        \psi(\lambda(g_{1}g_{2})) &= \psi(\lambda(g_{1})\lambda(g_{2}))\\
+        &= \psi(\lambda(g_{1}))\psi(\lambda(g_{2}))\\
+        &= \psi\lambda(g_{1})\psi\lambda(g_{2}).
+    \end{align*}
+    Hence, $\psi\lambda$ is an automorphism and $Aut(G)$ is closed.
+    The identity mapping is an automorphism that maps $g\to g\ \forall g \in G$.
+    We have already shown $\psi\lambda$ is invertible, so we conclude $Aut(G)\leq Sym_{G}$.
+\end{proof}
+
+There is an important proposition we can infer about homomorphisms from this proof:
+
+\begin{theorem}{}
+    Let $\psi,\lambda$ be homomorphisms such that $\psi\lambda$ is defined. Then $\psi\lambda$ is also a homomorphism.
+\end{theorem}
+
+We will not provide the proof here, but we would need to take a similar approach to how we showed closure above.
+Our discussion of automorphisms is not finished here.
+It turns out we can go even deeper into the structure of automorphisms and create what is called an inner automorphism (there are also outer automorphisms, but we will not look at them here).
+
+\begin{definition}{Inner Automorphism}
+    Let $G$ be a group and let $\phi: G\to G$ be an automorphism.
+    Then $\phi$ is called an inner automorphism if $\exists g\in G\suchthat \phi(a)=gag^{-1}\ \forall a\in G$.
+\end{definition}
+
+We use the notation $\phi_{g}(a) = gag^{-1}$ to mean the inner automorphism given by $g$ on $a$.
+Not surprisingly, the inner automorphisms on $G$ form a group; perhaps more surprising is the fact that the inner automorphism group on $G$, $Inn(G)$ is normal to $Aut(G)$.
+We should formally define $Inn(G)$ first before looking more into this phenomenon.
+
+\begin{definition}{Inner Automorphism Group}
+    Let $G$ be a group. Then the inner automorphism group on $G$, $Inn(G)$ is given by
+    \[
+        Inn(G) = \{\phi_{g}: g\in G\}.
+    \]
+\end{definition}
+
+\begin{theorem}{}
+    Let $G$ be a group and let $Inn(G)$ be the inner automorphism group on $G$. Then
+    \[
+        Inn(G)\normal Aut(G).
+    \]
+\end{theorem}
+\begin{proof}
+    We first need to show $Inn(G)\leq Aut(G)$.
+    Let $a,b,x\in G$ and let $\phi_{a},\phi_{b}\in Inn(G)$. Then
+    \begin{align*}
+        \phi_{a}\phi_{b}(x) &= \phi_{a}(bxb^{-1})\\
+        &= abxb^{-1}a^{-1}\\
+        &= (ab)x(ab)^{-1}\\
+        &= \phi_{ab}(x) \in Inn(G),
+    \end{align*}
+    so we conclude that $Inn(G)$ is closed.
+    Let $x\in G$ and consider $\phi_{e}(x)=exe^{-1}=x=id(x)$, so we have have $id\in Inn(G)$.
+    We claim that $\phi_{g}^{-1}=\phi_{g^{-1}}\ \forall g\in G$.
+    To see this, let $x\in G$ and consider
+    \[
+        \phi_{g}\phi_{g^{-1}}(x)=gg^{-1}xg^{-1}g=exe=x=id(x),
+    \]
+    so we satisfy the required property for inverses.
+    Finally, we need to show that $Inn(G)\normal Aut(G)$.
+    Let $\psi\in Aut(G)$, $a\in G$, and $\phi_{g}\in Inn(G)$. Then
+    \begin{align*}
+        \psi\phi_{g}\psi^{-1}(a) &= \psi\phi_{g}(\psi^{-1}(a))\\
+        &= \psi(g\psi^{-1}(a)g^{-1})\\
+        &= \psi(g)\psi(\psi^{-1}(a))\psi(g^{-1})\\
+        &= \psi(g)a\psi^{-1}(g)\\
+        &= \phi_{\psi(g)}(a).
+    \end{align*}
+\end{proof}
+
+This condition of normality will be very important when we talk about the main theorem of this section.
+
+\subsection*{The Fundamental Theorem of Homomorphisms}
+
+We are now prepared to talk about the most important theorem of this section.
+We have seen various examples of groups looking similar to each other, but we have stealthily avoided the topic of group equality.
+It turns out that combining the topics of normality, cosets, factor groups, and homomorphisms gives us the tools we need to compare groups.
+Before we continue, however, we need to look at a very important subgroup related to homomorphisms.
+
+\begin{definition}{Kernel}
+    Let $G, K$ be groups and let $\phi: G\to K$ be a homomorphism.
+    The kernal of $\phi$, $Ker(\phi)$ is the subgroup of $G$ given by
+    \[
+        Ker(\phi) = \{g\in G : \phi(g)=e_{K}\}.
+    \]
+\end{definition}
+
+The kernel is all the elements which $\phi$ maps to the identity element in the image group.
+Let's take a look at some examples.
+
+\begin{example}{Find $Ker(\det)$.}
+    The kernel of the determinant will be all the matrices with determinant 1.
+    This is the set
+    \[
+        Ker(\det)=\{A\in GL_{n}(\RR): \det(A)=1\},
+    \]
+    which turns out to be a familiar normal subgroup of $GL_{n}(\RR)$, namely $SL_{n}(\RR)$.
+\end{example}
+
+It's no coincidence that $Ker(\det)=SL_{n}(\RR)$; consider the following example.
+
+\begin{example}{Let $\phi:\ZZ\to\ZZ_{n}$ be given by $\phi(a)=\overline{a}$. Find $Ker(\phi)$.}
+    Recall that $\ZZ_{n}$ is an additive group, and that the identity element is 0.
+    Hence, $Ker(\phi)=\{a\in\ZZ_{n}: a\equiv 0\mod n\}$, also known as the coset of $\ZZ$ defined by $n$, $n\ZZ$.
+\end{example}
+
+These subgroups that are appearing are more than just subgroups.
+They are in fact normal subgroups.
+
+\begin{theorem}{}
+    Let $\phi$ be a homomorphism on $G$. Then
+    \[
+        Ker(\phi)\normal G.
+    \]
+\end{theorem}
+\begin{proof}
+    Let $h_{1},h_{2}\in Ker(\phi)$. Then $\phi(h_{1})=\phi(h_{2})=e$. We first need to show that $Ker(\phi)\leq G$.
+    \[
+        \phi(e)=e\text{ for every homomorphism, so } e\in Ker(\phi).
+    \]
+    \[
+        \phi(h_{1}h_{2})=\phi(h_{1})\phi(h_{2})=ee=e\in Ker(\phi)\implies Ker(\phi)\text{ is closed.}
+    \]
+    Let $h\in Ker(\phi)$. Then
+    \[
+        \phi(h^{-1})=\phi^{-1}(h)=e^{-1}=e\in Ker(\phi).
+    \]
+    Hence $Ker(\phi)\leq G$. We now need to show the condition of normality holds.
+    Let $h\in Ker(\phi)$ and $g\in G$. Then
+    \begin{align*}
+        \phi(ghg^{-1}) &= \phi(g)\phi(h)\phi(g^{-1})\\
+        &= \phi(g)e\phi^{-1}(g)\\
+        &= \phi(g)\phi^{-1}(g)\\
+        &= e\in Ker(\phi).
+    \end{align*}
+\end{proof}
+
+With the concept of the kernel in mind, we will introduce the concept of isomorphic groups.
+\begin{definition}{Isomorphic}
+    Let $G$ and $K$ be groups. Then $G$ is isomorphic to $K$ if there exists and isomorphism between $G$ and $K$. We use the notation
+    \[
+        G\cong K.
+    \]
+\end{definition}
+
+Since isomorphisms are homomorphisms, they preserve structure; thus saying that two groups are isomorphic to each other implies that they are algebraically equivalent.
+In this case, the isomorphism simply renames the elements in the group.
+We have seen the concept of isomorphic groups already, but we can refine the idea through some examples.
+
+\begin{example}{Show that $\ZZ_{2}\cong \{\pm 1\}$.}
+    The easiest way to see this is to draw out the Cayley tables for the respective groups.
+    \begin{center}
+        
+    \end{center}
+\end{example}

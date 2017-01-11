@@ -1,0 +1,54 @@
+\section{Introduction to Graphs}
+
+The idea of a graph is relatively simple but requires some prior ideas from the study of set theory.
+Recall that given a set $A$, we can create what is known as the power set of a, $\mathcal{P}(A)$, consisting of all subsets of $A$.
+We can extend this idea a little further but considering subsets of the power set of a given set.
+
+\begin{definition}{Power-$k$ Set}
+    Let $A$ be a finite set of order $n$ and let $k\in\NN$.
+    The power-$k$ set of $A$, $\mathcal{P}_{k}(A)$, is the set of all subsets of $A$ with cardinality $k$.
+\end{definition}
+
+We get some nice relationships between the power-$k$ set and the power set of $A$.
+First, note that $\mathcal{P}_{k}(A)\subset\mathcal{P}(A)\ \forall k$; even if $k > n$, we still have a subset of $\mathcal{P}(A)$ since $\mathcal{P}_{k}(A)=\emptyset$ in that case.
+The power set can be expressed as a union of power-$k$ sets:
+\[
+    \mathcal{P}(A) = \bigcup_{k=1}^{n}\mathcal{P}_{k}(A).
+\]
+There are various other properties that follow, but our main purpose of introducing the power-$k$ set is to assist us in our definition of a graph.
+
+\begin{definition}{Graph}
+    Let $V$ be a finite set and let $E\subset\mathcal{P}_{2}(V)$.
+    The pair $(V,E)$ is called a graph, with the vertex set $V$ and the edge set $E$.
+\end{definition}
+
+This is our main definition to keep in mind throughout this entire chapter.
+We may often see pictures of graphs drawn with dots and lines, but it is the pair of sets that truly defines the structure.
+We can, and usually do, prefer to draw graphs from the provided sets in order to determine various properties.
+
+\begin{example}{Let $V=\{a,b,c\}$ and $E=\{\{a,b\},\{b,c\}\}$. Draw a representation of this graph.}
+    We ought to first determine whether or not $(V,E)$ actually is a graph.
+    We require $E$ to have two main properties:
+
+    \begin{enumerate}
+        \item Every element of every set within $E$ is an element of $V$.
+        \item $E\subset\mathcal{P}_{2}{V}$.
+    \end{enumerate}
+
+    Indeed, both these properties hold, so $(V,E)$ is a graph.
+    We could draw infinitely many representations of $(V,E)$; here is one such.
+    \begin{center}
+        \begin{tikzpicture}[node distance=1cm]
+            \node(a) {a};
+    		\node(b) [below left of=a] {b};
+    		\node(c) [below right of=a] {c};
+
+    		\draw(a) -- (b);
+    		\draw(b) -- (c);
+        \end{tikzpicture}
+    \end{center}
+    The pairs within the $E$ represent the vertices which share an edge; the values within $V$ represent the vertices themselves.
+\end{example}
+
+One key fact to note is that the definition does not require the pairs within $E$ to be ordered; if they are ordered, then we have what is called a directed graph.
+We will look at directed graphs later, but for now we will consider the non-directed case.
