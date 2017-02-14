@@ -240,12 +240,48 @@ With the concept of the kernel in mind, we will introduce the concept of isomorp
 \end{definition}
 
 Since isomorphisms are homomorphisms, they preserve structure; thus saying that two groups are isomorphic to each other implies that they are algebraically equivalent.
-In this case, the isomorphism simply renames the elements in the group.
+In this case, the isomorphism simply renames the elements in the group to elements in the other group.
 We have seen the concept of isomorphic groups already, but we can refine the idea through some examples.
 
 \begin{example}{Show that $\ZZ_{2}\cong \{\pm 1\}$.}
-    The easiest way to see this is to draw out the Cayley tables for the respective groups.
-    \begin{center}
-        
-    \end{center}
+    To do this, we need to come up with an isomorphism from $\ZZ_{2}$ to $\{\pm 1\}$.
+    We can actually create several, but the easiest one is to define $\phi$ by
+    \[
+        \phi(x) =
+        \begin{cases}
+            1\qquad\text{if } x\equiv 0\mod 2\\
+            -1\quad\text{if } x\equiv 1\mod 2
+        \end{cases}.
+    \]
+    It is easy to see that this mapping is invertible, so we will not go over it here.
 \end{example}
+
+The previous example is very simple; often times, creating an isomorphism can be difficult.
+Luckily, we have some very nice properties concerning the orders of groups and isomorphisms.
+Consider the following example.
+
+\begin{example}{Determine how many groups of order 4 there are, up to isomorphism.}
+    We are about to discover a very interesting fact about groups.
+    Up to this point we have examined various groups of order 4, but we are about to find out that there are only 2 groups that are relevant up to isomorphism, and they are $V_{4}$ and $\ZZ_{4}$.
+    We know this by the theorem of Lagrange; a proof for this fact would have the following structure.
+    \begin{enumerate}
+        \item The order of an element in a group must divide the order of the group.
+        \item The only possible orders of elements in a group of order 4 are 1, 2, and 4.
+        \item If the group contains an element of order 4, than that group cannot be isomorphic to $V_{4}$ since $V_{4}$ is not cyclic, so it must be isomorphic to $\ZZ_{4}$.
+        \item If the group has no elements of order 4, then it must be isomorphic to $V_{4}$, since it cannot be cyclic.
+    \end{enumerate}
+    This is an exciting result that combines several of the topics we have discussed up to this point.
+    We are relying on the fact that homomorphisms are structure preserving, so
+    \[
+        G\cong K \implies (G\text{ is cyclic }\iff K\text{ is cyclic.})
+    \]
+\end{example}
+
+With all of this knowledge in mind, we can now introduce the fundamental theorem of homomorphisms.
+
+\begin{theorem}{Fundamental Homomorphism Theorem}
+    Let $G, \Gamma$ be groups and let $\phi : G\to\Gamma$ be a homomorphism. Then
+    \[
+        \fgroup{G}{Ker(\phi)}\cong\Gamma.
+    \]
+\end{theorem}

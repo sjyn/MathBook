@@ -51,4 +51,71 @@ We can, and usually do, prefer to draw graphs from the provided sets in order to
 \end{example}
 
 One key fact to note is that the definition does not require the pairs within $E$ to be ordered; if they are ordered, then we have what is called a directed graph.
-We will look at directed graphs later, but for now we will consider the non-directed case.
+We also don't have any repeated edges (if we do, we have a multigraph), and no vertex can share an edge to itself (called a pseudograph)
+We will look at directed graphs in depth later, but for now we will consider the non-directed case.
+
+The next few pages will concern a whole slew of definitions.
+The terminology here is not always standard, but it is what we will go with for the rest of our discussion on graphs.
+
+\begin{definition}{Order}
+    Suppose $G$ is a graph. Then the order of $G$ is $ord(G)=|V(G)|$.
+\end{definition}
+\begin{definition}{Size}
+    Suppose $G$ is a graph. Then the size of $G$ is $size(G)=|E(G)|$.
+\end{definition}
+
+These terms are more for convenience. The next few are actually useful.
+
+\begin{definition}{Degree}
+    Let $v\in V(G)$. The degree of $v$ in $G$, $deg_{G}(v)$, is the number of edges incident with $v$.
+    We often write $deg(v)$ if the context of the graph is obvious.
+\end{definition}
+
+The degree of a vertex tells us how many edges come out of the vertex.
+As it so happens, we actually know how large this number can be: $ord(G) - 1$.
+This makes sense intuitively; a vertex can have no duplicate edges and no edges to itself, so the max number of edges a given vertex can have is an edge to every other vertex in the graph.
+If every vertex has this property, we call the graph \textit{complete}.
+
+\begin{definition}{Complete}
+    Let $G$ be a graph and let $n=ord(G)$. We call $G$ complete if $\forall\ v\in V(G),\ deg(v)=n-1$. Since these graphs are unique, we say $G=K_{n}$, meaning the complete graph on $n$ vertices.
+\end{definition}
+
+The concept of graph equality is something that we discuss further in a little bit.
+For now, we are ready for our first theorem.
+
+\begin{theorem}{}
+    Suppose $G$ is a graph. Then
+    \[
+        \sum_{v\in V(G)}deg(v) = 2\ size(G).
+    \]
+\end{theorem}
+\begin{proof}
+    We can show this via induction. Suppose $size(G)=0$. Then $2\ size(G)=2\cdot0=0$.
+    Since $size(G)=0$, $deg(v)=0\ \forall v\in V(G)$, so the sum over the degrees is also 0.
+    Hence, we may assume for all graphs $H$ with $n$ edges,
+    \[
+        \sum_{v\in V(H)}deg_{H}(v) = 2n.
+    \]
+    Assume $G$ has $n+1$ edges. We must show
+    \[
+        \sum_{v\in V(G)}deg(v)=2(n+1).
+    \]
+    Let $H$ be a graph such that $V(H)=V(G)$ and $E(H)=E(G)\setminus ab$ for some $ab\in E(G)$. Then
+    \[
+        \sum_{v\in V(H)}deg_{H}(v)=2n\implies\sum_{v\in V(G)}deg_{H}(v)=2n.
+    \]
+    Since $ab\in E(G),\ \exists v_{1},v_{2}\in V(G)$ which are incident with $ab$.
+    Hence $deg_{H}(v_{1})+1=deg_{G}(v_{1})$ and $deg_{H}(v_{2})+1=deg_{G}(v_{2})$.
+    Note that for all other vertices in $v\in V(G)$, $deg_{H}(v)=deg_{G}(v)$.
+    Then
+    \[
+        \sum_{v\in V(G)}deg_{H}(v)=-2+\sum_{v\in V(G)}deg_{G}(v).
+    \]
+    By the inductive hypothesis, we have
+    \[
+        2n=\left( \sum_{v\in V(G)}deg_{G}(v) \right) - 2\implies
+        2(n+1)=\sum_{v\in V(G)}deg_{G}(v).
+    \]
+\end{proof}
+
+Induction is a very common proof technique that we will encounter throughout or study of graphs; the strategy of creating a new graph with properties of our old graph is also a very useful technique.

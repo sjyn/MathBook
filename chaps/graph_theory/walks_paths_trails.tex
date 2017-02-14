@@ -1,0 +1,90 @@
+\section{Walks, Paths, and Trails}
+
+The topics covered in this section address the ways we can traverse graphs.
+In our study, we have the freedom to move from any vertex to any other vertex as long as there is an edge between them.
+The strategies we use to move around a graph form the theory of walks, paths, and trails.
+
+\begin{definition}{Walk}
+	Suppose $G$ is a graph. We say a finite sequence of vertices $v_{1},v_{2},\dots,v_{k}$ is a walk of length $k$ provided that $v_{i}v_{i+1}\in E(G)$ for all $1\leq i\leq k$. If $v_{1}=v_{k}$, then we say the walk is closed.
+\end{definition}
+
+In other words, a sequence of vertices is a walk if we can always move along a single edge to the next vertex in the sequence.
+We have several ways to write walks; we can use set notation $\{a,b,c,d\}$ or simply write the vertices in the order they appear, $abcd$, if it is obvious to do so.
+
+\begin{example}{}
+
+	\begin{minipage}{0.3\textwidth}
+		\begin{tikzpicture}[node distance=1cm]
+			\node(a) {a};
+			\node(b) [above right of=a] {b};
+			\node(c) [below right of=b] {c};
+			\node(d) [below of=c] {d};
+			\node(e) [below left of=d] {e};
+
+			\draw(a) -- (b);
+			\draw(b) -- (c);
+			\draw(c) -- (d);
+			\draw(b) -- (d);
+			\draw(d) -- (e);
+		\end{tikzpicture}
+	\end{minipage}
+	\begin{minipage}[t]{0.65\textwidth}
+        \vspace{-1.2cm}
+		In this graph, $abde$ and $abcba$ form walks, but $ade$ does not since there is $ad\notin E(G)$.
+        Note that we can repeat vertices if need be.
+	\end{minipage}
+
+\end{example}
+
+Walks are simplistic in their construction since we can move anywhere in the graph where there is an edge.
+The more interesting idea here is a walk where no vertices are repeated.
+
+\begin{definition}{Path}
+    Let $W$ be a walk in a graph $G$. If $W$ contains no repeated vertices, then we call $W$ a path. If we include the edge $v_{k}v_{1}$, provided that it exists, the we call the path closed, or a cycle.
+\end{definition}
+
+Paths concern vertices, but there is an analogous idea for edges.
+
+\begin{definition}{Trail}
+    If all edges in a walk are distinct, then it is called a trail.
+\end{definition}
+
+When talking about walks and paths, we say the length of the walk is the number of edges in the walk.
+If the path is closed, then we count the missing edge in the path as part of the length.
+With these definitions in mind, we now have enough to build our first theorem.
+
+\begin{theorem}{}
+    Let $G$ be a graph and let $A$ be a walk in $G$. If $A$ is not a trail, then $A$ is not a path.
+\end{theorem}
+
+We won't prove this here, but note that the contrapositive holds (and is a little more pleasing to read)
+
+\begin{theorem}{}
+    If $A$ is a path, then $A$ is a trail.
+\end{theorem}
+
+Again, we won't prove this, but it is important to keep in mind. The next theorem, however, is a little more worthwhile to prove.
+
+\begin{theorem}{}
+    Suppose $G$ is a graph and let $u,v\in V(G)$ be distinct. Then every $uv$ walk contains a $uv$ path.
+\end{theorem}
+\begin{proof}
+    Let $A$ be a $uv$ walk, and assume $A$ has length 1. Hence, $u$ and $v$ are the only vertices in the walk, so $A$ is a path. Assume that all $uv$ walks of length $l$ contain a $uv$ path.
+    We must show that for a $uv$ walk $A$ of length $l+1$ contains a $uv$ path.
+    Since $A$ is a walk, we may name the vertices in $A$:
+    \[
+        A = v_{1}v_{2}\dots v_{k}
+    \]
+    with $u=v_{1}$ and $v=v_{k}$.
+    If $A$ is a $uv$ path then we are done, so assume that $A$ is not a path.
+    Then $\exists i\neq j \suchthat v_{i}=v_{j}$.
+    Define $B$ to be a walk such that
+    \[
+        B = v_{1}v_{2}\dots v_{i}v_{j+1}v_{j+2}\dots v_{k}.
+    \]
+    We have removed at least one edge from $A$ to create $B$, so the length of $B$ is less than or equal to $l$.
+    By the inductive hypothesis, we have that $B$ contains a $uv$ path $C$.
+    Hence if $C$ is contained in $B$ and $B$ is contained in $A$, then $C$ is contained in $A$, so $A$ contains a $uv$ path.
+\end{proof}
+
+This is a very important result since it allows us to find a $uv$ path in any $uv$ walk.
