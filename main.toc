@@ -27,20 +27,21 @@
 \contentsline {chapter}{\numberline {11}Graph Theory and Combinatorics}{71}
 \contentsline {section}{\numberline {11.1}Introduction to Graphs}{71}
 \contentsline {section}{\numberline {11.2}Walks, Paths, and Trails}{74}
-\contentsline {chapter}{\numberline {12}Probability}{77}
-\contentsline {chapter}{\numberline {13}Statistics}{79}
-\contentsline {part}{IV\hspace {1em}Case Studies}{81}
-\contentsline {chapter}{\numberline {14}Linear Algebra}{83}
-\contentsline {chapter}{\numberline {15}p-adic Analysis}{85}
-\contentsline {chapter}{Appendices}{87}
-\contentsline {chapter}{\numberline {A}Major Theorems}{89}
-\contentsline {chapter}{\numberline {B}Important Definitions}{91}
-\contentsline {chapter}{\numberline {C}Tests for Convergence}{93}
-\contentsline {section}{\numberline {C.1}Series in $\mathbb {R}$}{93}
-\contentsline {section}{\numberline {C.2}Series in $\mathbb {C}$}{95}
-\contentsline {section}{\numberline {C.3}Power Series in $\mathbb {Q}_{p}$}{95}
-\contentsline {chapter}{\numberline {D}Common Riemann Integration Techniques}{97}
-\contentsline {chapter}{\numberline {E}Distribution Tables}{99}
-\contentsline {section}{\numberline {E.1}Normal (Gaussian) Distribution}{99}
-\contentsline {chapter}{\numberline {F}Solutions to Selected Problems}{101}
-\contentsline {section}{\numberline {F.1}Groups}{101}
+\contentsline {section}{\numberline {11.3}Types of Graphs}{75}
+\contentsline {chapter}{\numberline {12}Probability}{79}
+\contentsline {chapter}{\numberline {13}Statistics}{81}
+\contentsline {part}{IV\hspace {1em}Case Studies}{83}
+\contentsline {chapter}{\numberline {14}Linear Algebra}{85}
+\contentsline {chapter}{\numberline {15}p-adic Analysis}{87}
+\contentsline {chapter}{Appendices}{89}
+\contentsline {chapter}{\numberline {A}Major Theorems}{91}
+\contentsline {chapter}{\numberline {B}Important Definitions}{93}
+\contentsline {chapter}{\numberline {C}Tests for Convergence}{95}
+\contentsline {section}{\numberline {C.1}Series in $\mathbb {R}$}{95}
+\contentsline {section}{\numberline {C.2}Series in $\mathbb {C}$}{97}
+\contentsline {section}{\numberline {C.3}Power Series in $\mathbb {Q}_{p}$}{97}
+\contentsline {chapter}{\numberline {D}Common Riemann Integration Techniques}{99}
+\contentsline {chapter}{\numberline {E}Distribution Tables}{101}
+\contentsline {section}{\numberline {E.1}Normal (Gaussian) Distribution}{101}
+\contentsline {chapter}{\numberline {F}Solutions to Selected Problems}{103}
+\contentsline {section}{\numberline {F.1}Groups}{103}
